@@ -1,5 +1,4 @@
 # Generating-Readme
-Good Readme Generator
 
 Description
 This application will assist in the creation of a readme
