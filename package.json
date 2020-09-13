@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.5.2"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,6 @@
     "url": "https://github.com/jamesjorissen/Generating-Readme/issues"
   },
   "homepage": "https://github.com/jamesjorissen/Generating-Readme#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "keywords": []
 }
