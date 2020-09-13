@@ -55,12 +55,53 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+            throw err;
+        }
+        console.log("Successful");
+    });
 }
 
 // function to initialize program
 function init() {
+    inquirer
+        .prompt(questions)
+        .then(function ({
+            username,
+            project,
+            repoName,
+            projectDescription,
+            license,
+            installDependencies,
+            usefulInformation,
+            contributions }) {
+            if (
+                username !== "" &&
+                email !== "" &&
+                project !== "" &&
+                repoName !== "" &&
+                projectDescription !== "" &&
+                license !== "" &&
+                installDependencies !== "" &&
+                usefulInformation !== "" &&
+                contributions !== "") {
 
-}
+                writeToFile("README.md", generateMarkdown({
+                    username,
+                    project,
+                    repoName,
+                    projectDescription,
+                    license,
+                    installDependencies,
+                    usefulInformation,
+                    contributions
+                }));
+            }
+            else {
+                console.log("Please enter all information");
+                init();
+            }
 
-// function call to initialize program
-init();
+            // function call to initialize program
+            init();
