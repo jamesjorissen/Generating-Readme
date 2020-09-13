@@ -1,7 +1,7 @@
 // added inquirer, fs and generateMarkdown as requirements
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./generateMarkdown");
 
 // array of questions for user
 const questions = [{
@@ -12,7 +12,7 @@ const questions = [{
 {
     type: "input",
     message: "What have you named your project?",
-    name: "projectName"
+    name: "project"
 },
 {
     type: "input",
@@ -65,43 +65,27 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer
-        .prompt(questions)
-        .then(function ({
-            username,
-            project,
-            repoName,
-            projectDescription,
-            license,
-            installDependencies,
-            usefulInformation,
-            contributions }) {
-            if (
-                username !== "" &&
-                project !== "" &&
-                repoName !== "" &&
-                projectDescription !== "" &&
-                license !== "" &&
-                installDependencies !== "" &&
-                usefulInformation !== "" &&
-                contributions !== "") {
+    inquirer.prompt(questions)
+        .then(
+            function (answers) {
+                if (
+                    answers.username !== "" &&
+                    answers.email !== "" &&
+                    answers.project !== "" &&
+                    answers.repoName !== "" &&
+                    answers.projectDescription !== "" &&
+                    answers.license !== "" &&
+                    answers.installDependencies !== "" &&
+                    answers.usefulInformation !== "" &&
+                    answers.contributions !== "") {
 
-                writeToFile("README.md", generateMarkdown({
-                    username,
-                    project,
-                    repoName,
-                    projectDescription,
-                    license,
-                    installDependencies,
-                    usefulInformation,
-                    contributions
-                }));
+                    writeToFile("MARKDOWN.md", generateMarkdown(data));
+                }
+                else {
+                    console.log("Please enter all information");
+                    init();
+                }
             }
-            else {
-                console.log("Please enter all information");
-                init();
-            }
-        })
+        )
 }
 // function call to initialize program
-init();
