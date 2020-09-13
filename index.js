@@ -1,7 +1,7 @@
 // added inquirer, fs and generateMarkdown as requirements
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [{

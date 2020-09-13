@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/jamesjorissen/Generating-Readme/issues"
   },
-  "homepage": "https://github.com/jamesjorissen/Generating-Readme#readme"
+  "homepage": "https://github.com/jamesjorissen/Generating-Readme#readme",
+  "devDependencies": {}
 }
