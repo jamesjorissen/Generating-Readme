@@ -102,6 +102,7 @@ function init() {
                 console.log("Please enter all information");
                 init();
             }
-
-            // function call to initialize program
-            init();
+        })
+}
+// function call to initialize program
+init();

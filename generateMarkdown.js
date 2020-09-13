@@ -4,9 +4,9 @@ function generateMarkdown(data) {
     # ${data.project}
     ![License](https://img.shields.io/github/license/${data.username}/${data.repo})
     ## Description
-    * ${data.description}
+    * ${data.projectDescription}
     ## Table of Contents
-    * [Installation](#installation)
+    * [Installation](#Installation)
     * [Usage](#Usage)
     * [License](#License)
     * [Contributing](#Contributing)
@@ -14,7 +14,7 @@ function generateMarkdown(data) {
     To install necessary dependencies, run the following command:
         ${data.installDependencies}
     ## Usage
-    ${data.repo}
+    ${data.usefulInformation}
     ## License
     * ${data.license}
     ## Contributing
