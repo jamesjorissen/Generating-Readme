@@ -78,7 +78,6 @@ function init() {
             contributions }) {
             if (
                 username !== "" &&
-                email !== "" &&
                 project !== "" &&
                 repoName !== "" &&
                 projectDescription !== "" &&
