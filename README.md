@@ -20,4 +20,3 @@ This application has not yet been licensed, but the generator does provide licen
 
 Contributing
 James Jorissen
-

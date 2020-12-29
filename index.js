@@ -1,7 +1,7 @@
 // added inquirer, fs and generateMarkdown as requirements
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [{
@@ -40,7 +40,7 @@ const questions = [{
     message: "What command installs dependencies?",
     name: "installDependencies"
 },
-    , {
+{
     type: "input",
     message: "Is there any other information the user needs to know about this repository?",
     name: "usefulInformation"
@@ -79,7 +79,7 @@ function init() {
                     answers.usefulInformation !== "" &&
                     answers.contributions !== "") {
 
-                    writeToFile("MARKDOWN.md", generateMarkdown(data));
+                    writeToFile("MARKDOWN.md", generateMarkdown(answers));
                 }
                 else {
                     console.log("Please enter all information");
@@ -89,3 +89,4 @@ function init() {
         )
 }
 // function call to initialize program
+init();
